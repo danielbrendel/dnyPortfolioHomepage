@@ -10,7 +10,7 @@
         <meta name="og:title" property="og:title" content="{{ (isset($_meta_title)) ? $_meta_title : env('APP_AUTHOR') }}">
         <meta name="og:description" property="og:description" content="{{ (isset($_meta_description)) ? $_meta_description : env('APP_DESCRIPTION') }}">
         <meta name="og:url" property="og:url" content="{{ (isset($_meta_url)) ? $_meta_url : url('/') }}">
-        <meta name="og:image" property="og:image" content="{{ (isset($_meta_image)) ? asset('img/uploads/' . $_meta_image) : asset('img/preview.png') }}">
+        <meta name="og:image" property="og:image" content="{{ (isset($_meta_image)) ? asset('img/uploads/' . $_meta_image) : Utils::getDefaultMetaImage() }}">
 
         <title>{{ env('APP_TITLE') }}</title>
 
@@ -91,7 +91,8 @@
                 window.addStartMenuItem('Applets', 'applets.png', function() { window.openWidget('#column-window-applets'); });
                 @endif
                 window.addStartMenuItem('Settings', 'settings.png', function() { window.openWidget('#column-window-settings'); });
-                window.addStartMenuItem('Reset', 'reset.png', function() { window.resetSettings(); window.closeAllWidgets(); });
+                window.addStartMenuItem('Reset', 'reset.png', function() { window.resetSettings(true); });
+                window.addStartMenuItem('Reboot', 'reboot.png', function() { location.href = '{{ url('/?reboot=1') }}'; });
 
                 window.applySettings();
 
@@ -148,6 +149,14 @@
 
                 @if (env('APP_ENABLE_SERVICES'))
                 setTimeout(function() { window.queryEndpointStatuses(); }, 3500);
+                @endif
+
+                @if ((isset($_GET['reboot'])) && ($_GET['reboot']) == 1)
+                window.notify('Reboot succeeded', 'The system was successfully rebooted.');
+                @endif
+
+                @if ((isset($_GET['reset'])) && ($_GET['reset']) == 1)
+                window.notify('System reset', 'The system was reset successfully!', 'success');
                 @endif
 
                 let initialVisit = parseInt(window.readSetting('initial-visit', '0'));

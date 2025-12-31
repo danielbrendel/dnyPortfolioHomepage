@@ -41,7 +41,7 @@
             <div class="applet-details">
                 <div class="applet-info">Select an applet to view details</div>
                 <div class="applet-action is-hidden">
-                    <div class="applet-install is-hidden" onclick="window.downloadApplet(document.getElementById('applet-action-install-name').value, document.getElementById('applet-action-install-resource').value); window.unselectAllApplets(); this.classList.add('is-hidden');">
+                    <div class="applet-install is-hidden" onclick="window.downloadApplet(document.getElementById('applet-action-install-name').value, document.getElementById('applet-action-install-resource').value); this.classList.add('is-hidden');">
                         <input type="hidden" id="applet-action-install-name"/>
                         <input type="hidden" id="applet-action-install-resource"/>
 

@@ -204,6 +204,18 @@ class Utils {
     }
 
     /**
+     * @return string
+     */
+    public static function getDefaultMetaImage()
+    {
+        if (file_exists(public_path() . '/img/preview.png')) {
+            return asset('img/preview.png');
+        }
+
+        return asset('img/logo.png');
+    }
+
+    /**
      * @param $value
      * @return string
      */

@@ -15,7 +15,11 @@
                 <legend>Appearance</legend>
                 <div class="field-row">
                     <label>Text color</label>
-                    <input id="settings-dialog-style-text-color" type="color" value="#000000" onchange="window.saveSetting('style-text-color', this.value); window.applySettings();"/>
+                    <input id="settings-dialog-style-text-color" type="color" value="#ffffff" onchange="window.saveSetting('style-text-color', this.value); window.applySettings();"/>
+                </div>
+                <div class="field-row">
+                    <input id="settings-dialog-style-text-emphasis" type="checkbox" onchange="window.saveSetting('style-text-emphasis', ((this.checked) ? '1' : '0')); window.applySettings();"/>
+                    <label for="settings-dialog-style-text-emphasis">Text emphasis</label>
                 </div>
                 <div class="field-row">
                     <label>Background color</label>
@@ -42,7 +46,7 @@
                 </div>
             </fieldset>
 
-            <p><button onclick="window.resetSettings();">Reset to defaults</button></p>
+            <p><button onclick="window.resetSettings(true);">Reset to defaults</button></p>
         </div>
 	</div>
 </div>

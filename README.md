@@ -1,22 +1,41 @@
-# Daniel Brendel Portfolio App
+<h1 align="center">
+    <img src="public/img/logo.png" alt="logo" width="100"/><br/>
+    Daniel Brendel Portfolio App
+</h1>
 
-<img src="public/img/preview.png" alt="screenshot"/>
+<p align="center">
+    A personal portfolio application designed as a web desktop<br/>
+    (C) 2019 - 2025 by Daniel Brendel<br/>
+    Released under the MIT license
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/language-PHP-orange" alt="language-php"/>
+    <img src="https://img.shields.io/badge/license-MIT-blue" alt="license-mit"/>
+    <img src="https://img.shields.io/badge/nostalgic-YES-green" alt="nostalgic-yes"/>
+</p>
 
 ## Information
-
-(C) 2019 - 2025 by Daniel Brendel
 
 **Version**: 1.0\
 **Codename**: dnyPortfolioApp\
 **Contact**: dbrendel1988(at)gmail(dot)com\
 **GitHub**: https://github.com/danielbrendel/
 
-<img src="https://img.shields.io/badge/language-PHP-orange" alt="language-php"/>
-<img src="https://img.shields.io/badge/license-MIT-blue" alt="license-mit"/>
-<img src="https://img.shields.io/badge/nostalgic-Yes-green" alt="nostalgic-yes"/>
-
 ## Description
-This is my personal portfolio application designed as a [web desktop](https://en.wikipedia.org/wiki/Web_desktop). Its GUI resembles old Windows versions for the maximum nostalgic experience. The project also features an applet system, so you can manage applets from web resources dynamically.
+This is my personal portfolio application designed as a [web desktop](https://en.wikipedia.org/wiki/Web_desktop). The GUI is designed to provide a maximum nostalgic experience. The project also features an applet system, so you can dynamically install and uninstall applets.
+
+## Installation
+
+You can install the project by following these steps:
+
+1. Make sure you have PHP, MySQL and Composer installed on your system.
+2. Clone the repository to your system using `git clone https://github.com/danielbrendel/dnyPortfolioApp`
+3. Copy the `.env.example` to `.env` and adjust all necessary settings.
+4. Run `composer install` in order to install all dependencies.
+5. Run `php asatru migrate:fresh` to perform database migrations.
+6. Fill in the database tables depending on your needs.
+7. Launch the app via `php asatru serve`. The app will then be available via http://localhost:8000.
 
 ## Tech stack
 
@@ -35,13 +54,3 @@ The following technologies are used for this project.
 | Bulma  | A modern CSS framework  | [https://bulma.io](https://bulma.io) |
 | 98.css  | A design system for old UIs   | [https://github.com/jdan/98.css](https://github.com/jdan/98.css) |
 | FontAwesome  | A popular icon library  | [https://fontawesome.com](https://fontawesome.com) |
-
-## System requirements
-
-- PHP ^8.3
-- MariaDB ^11.4
-
-
-## Disclaimer
-
-This project uses Windows 9x icons from [win98icons.alexmeub.com](https://win98icons.alexmeub.com) (C) by Microsoft Corporation.

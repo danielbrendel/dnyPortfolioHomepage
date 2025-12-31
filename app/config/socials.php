@@ -26,6 +26,12 @@ return [
     ],
 
     [
+        'name' => 'Mastodon',
+        'url' => env('LINK_SOCIAL_MASTODON'),
+        'icon' => 'mastodon.png'
+    ],
+
+    [
         'name' => 'LinkedIn',
         'url' => env('LINK_SOCIAL_LINKEDIN'),
         'icon' => 'linkedin.png'
